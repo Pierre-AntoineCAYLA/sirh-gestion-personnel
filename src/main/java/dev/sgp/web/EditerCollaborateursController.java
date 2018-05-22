@@ -9,7 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 
 public class EditerCollaborateursController extends HttpServlet {
 	@Override
+
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String matricule = req.getParameter("matricule");
+		resp.setContentType("text/html");
+
+		if (matricule == null) {
+			resp.setStatus(400);
+			resp.getWriter().write("<h1>code =" + resp.getStatus() + "</h1> </br> <h2> un matricule est attendu</h2>");
+		} else {
+			resp.getWriter().write(
+					"<h1>Liste des collaborateurs</h1>" + "<ul>" + "<li>matricule=" + matricule + "</li>" + "</ul>");
+		}
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String matricule = req.getParameter("matricule");
 		String titre = req.getParameter("titre");
 		String nom = req.getParameter("nom");
@@ -44,4 +58,5 @@ public class EditerCollaborateursController extends HttpServlet {
 		}
 
 	}
+
 }
