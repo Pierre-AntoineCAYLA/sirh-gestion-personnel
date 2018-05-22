@@ -13,7 +13,7 @@ public class EditerCollaborateursController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String matricule = req.getParameter("matricule");
 		resp.setContentType("text/html");
-
+		resp.getWriter().write("<!DOCTYPE html><html><head><meta charset=\"utf-8\" /></head><body>");
 		if (matricule == null) {
 			resp.setStatus(400);
 			resp.getWriter().write("<h1>code =" + resp.getStatus() + "</h1> </br> <h2> un matricule est attendu</h2>");
@@ -56,6 +56,7 @@ public class EditerCollaborateursController extends HttpServlet {
 							+ "<h4> matricule = " + matricule + "</br> titre = " + titre + "</br> nom = " + nom
 							+ "</br> prenom = " + prenom + "</h4>");
 		}
+		resp.getWriter().write("</body></html>");
 
 	}
 
