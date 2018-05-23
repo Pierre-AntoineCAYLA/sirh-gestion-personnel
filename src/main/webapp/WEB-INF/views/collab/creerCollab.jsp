@@ -43,7 +43,7 @@
             </div>
           </div>
 
-        <form>
+        <form method="POST">
             <div class="row">
 
                 <div class="col-5">
@@ -92,7 +92,7 @@
 
           <div class="row justify-content-center">
             <div class="col-8">
-          <button type="submit" onclick='CrerCollabController.doPost()' class="form-control">Créer</button>
+          <button type="submit" class="form-control">Créer</button>
         </div>
           </div>
         </form>
