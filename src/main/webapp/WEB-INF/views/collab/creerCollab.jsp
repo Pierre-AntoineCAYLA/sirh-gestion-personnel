@@ -87,7 +87,7 @@
                   <label for="numeroSecurite">Numero de sécurité sociale</label>
                 </div>
                 <div class="col-4">
-                  <input type="number" class="form-control" id="numeroSecurite" placeholder="NumeroSecurite" maxlength=12 required>
+                  <input type="number" class="form-control" id="numeroSecurite" placeholder="NumeroSecurite" maxlength=15 required>
               </div>
             </div>
 

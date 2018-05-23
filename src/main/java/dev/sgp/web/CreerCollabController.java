@@ -27,7 +27,7 @@ public class CreerCollabController extends HttpServlet {
 		String dateDeNaissance = (String) req.getParameter("date");
 		String numeroSecu = (String) req.getParameter("numeroSecurite");
 		ZonedDateTime dateHeureCreation = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
-		resp.setStatus(201);
+		resp.setStatus(200);
 		resp.setContentType("text/html");
 
 		if (adresse == null) {
@@ -45,13 +45,12 @@ public class CreerCollabController extends HttpServlet {
 		if (prenom == null) {
 			resp.setStatus(400);
 		}
-
-		if (numeroSecu.trim().length() != 15) {
+		if (numeroSecu != null && numeroSecu.trim().length() != 15) {
 			resp.setStatus(400);
 
 		}
 
-		if (resp.getStatus() == 201) {
+		if (resp.getStatus() == 200) {
 
 			Collaborateur collab = new Collaborateur("M" + Math.floor(Math.random() * Math.floor(99)), nom, prenom,
 					LocalDate.parse(dateDeNaissance), adresse, numeroSecu, nom + "." + prenom + "@societe.com",
